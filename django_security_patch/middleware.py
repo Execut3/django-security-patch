@@ -4,7 +4,6 @@ from django.conf import settings
 def QueryStringsSanitizer(get_response):
 
     def wrapper(request):
-        response = get_response(request)
 
         if request.method == 'GET':
             # Only apply to get requests
@@ -32,6 +31,8 @@ def QueryStringsSanitizer(get_response):
                 edit_get[query_strings[i][0]] = query_strings[i][1]
 
             request.GET = edit_get
+            response = get_response(request)
+        else:
             response = get_response(request)
 
         return response
