@@ -11,7 +11,7 @@ setup(
     name='django-security-patch',
     packages=['django_security_patch'],
     license='GPT',
-    version='0.0.1',
+    version='0.0.3',
     description='Includes some security patches for better security in Django applications.',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -23,3 +23,6 @@ setup(
         "Framework :: Django"
     ],
 )
+
+# python3 setup.py sdist bdist_wheel
+# python3 -m twine upload --repository pypi dist/*
